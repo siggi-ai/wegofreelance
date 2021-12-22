@@ -1,11 +1,23 @@
 <template>
   <v-app dark>
+
     <v-btn color="darkblue" dark @click.stop="drawer = !drawer">open/close drawer</v-btn>
+
   <v-navigation-drawer v-model="drawer" absolute temporary>
     <br>
     <br>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list</p>
   </v-navigation-drawer>
+
+  <v-card class="input">
+     <form>
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname">
+    </form> 
+  </v-card>
+
   </v-app>
 </template>
 
@@ -37,3 +49,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.input {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 20%;
+  padding: 20px;
+}
+</style>

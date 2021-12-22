@@ -1,9 +1,6 @@
 <template>
 <div>
-    <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-navigation app v-model="drawer">
-        <p>test</p>
-    </v-navigation>
+    <input type="text">
 </div>
 </template>
 
