@@ -9,13 +9,47 @@
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list</p>
   </v-navigation-drawer>
 
-  <v-card class="input">
-     <form>
-      <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname"><br>
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname">
-    </form> 
+  <v-card class="input" color="blue">
+     <v-form
+      ref="form"
+      v-model="valid"
+      lazy-validation
+    >
+      <v-text-field
+        v-model="Vorname"
+        label="Vorname"
+        required
+      ></v-text-field>
+  
+      <v-text-field
+        v-model="Nachname"
+        label="Nachname"
+        required
+      ></v-text-field>
+
+      <v-text-field
+        v-model="Adresse"
+        label="Adresse"
+        required
+      ></v-text-field>
+
+      <v-text-field
+        v-model="Telefon"
+        label="Telefon"
+        required
+      ></v-text-field>
+  
+  
+      <v-btn
+        :disabled="!valid"
+        color="success"
+        class="mr-4"
+        @click="submit"
+      >
+        Submit
+      </v-btn>
+  
+    </v-form>
   </v-card>
 
   </v-app>
@@ -26,35 +60,37 @@ export default {
   name: 'DefaultLayout',
   data () {
     return {
+
       clipped: false,
       drawer: false,
       fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Vuetify.js',
+
+      valid: true,
+      Vorname: '',
+      Nachname: '',
+      Adresse: '',
+      Telefon: '',
     }
-  }
-}
+  },
+  methods: {
+    submit () {
+      let user = [this.Vorname, this.Nachname, this.Adresse, this.Telefon];
+      console.log(user);
+    },
+  },
+};
 </script>
 
 <style>
 .input {
   margin: 0 auto;
   margin-top: 20px;
-  width: 20%;
+  width: 50%;
   padding: 20px;
+  color: blue;
 }
 </style>
