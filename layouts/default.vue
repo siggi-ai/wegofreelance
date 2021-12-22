@@ -1,15 +1,11 @@
 <template>
   <v-app dark>
-    <v-app-bar app>new website</v-app-bar>
-    <v-toolbar flat app>
-<v-toolbar-side-icon></v-toolbar-side-icon>
-</v-toolbar>
-  <v-main>
-    <v-container>
-     
-    </v-container>
-  </v-main>
-  <v-navigation-drawer>hello drawer</v-navigation-drawer>
+    <v-btn color="darkblue" dark @click.stop="drawer = !drawer">open/close drawer</v-btn>
+  <v-navigation-drawer v-model="drawer" absolute temporary>
+    <br>
+    <br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list</p>
+  </v-navigation-drawer>
   </v-app>
 </template>
 

@@ -2,6 +2,7 @@
 <div>
   <p>hello world</p>
   <NavDrawer />
+  
 </div>
 </template>
 
