@@ -1,7 +1,6 @@
 <template>
   <v-app dark>
-
-    <v-btn color="darkblue" dark @click.stop="drawer = !drawer">open/close drawer</v-btn>
+    <v-btn color="darkblue" dark @click="drawer = !drawer">open/close drawer</v-btn>
 
   <v-navigation-drawer v-model="drawer" absolute temporary>
     <br>
@@ -72,18 +71,13 @@
 </template>
 
 <script>
-
-
-
 export default {
   name: 'DefaultLayout',
-
   data () {
     return {
+      drawer: false,
 
       clipped: false,
-      drawer: this.drawer,
-
       fixed: false,
       miniVariant: false,
       right: true,
@@ -96,16 +90,19 @@ export default {
       v => !!v || 'Vorname is required',
       v => (v && v.length <= 10 && v.length > 2) || 'Vorname must be between 3 and 10 characters',
       ],
+
       Nachname: '',
       NachnameRules: [
       v => !!v || 'Nachname is required',
       v => (v && v.length <= 10 && v.length > 2) || 'Nachname must be between 3 and 10 characters',
       ],
+
       Adresse: '',
       AdresseRules: [
       v => !!v || 'Adresse is required',
       v => (v && v.length <= 20 && v.length > 2) || 'Adresse must be between 3 and 20 characters',
       ],
+
       Telefon: '',
       TelefonRules: [
       v => !!v || 'Telefon is required',
@@ -121,11 +118,6 @@ export default {
       this.$refs.form.reset()
     },
   },
-/*   computed: {
-    drawer () {
-      return this.$store.state.drawer;
-    }
-  } */
 };
 </script>
 
